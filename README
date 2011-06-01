@@ -1,0 +1,15 @@
+
+O projeto Med Alert consiste em uma aplicação de alertas para auxiliar no controle de tratamentos envolvendo medicação.
+Basicamente, o usuário seleciona em que momentos deseja ser alertado, qual seria o medicamento desejado e uma nota (se desejado). Assim, quando chegar o momento definido, o usuário será alertado que deve aplicar o remédio definido.
+A princípio, a aplicação será voltada para três plastaformas: Android, iPhone e J2ME.
+Os links para os repositórios e seus respectivos responsáveis encontram-se abaixo:
+
+Android
+	https://github.com/hstefan/MedAlert
+	Hugo Stefan Kaus Puhlmann <puhlmann@inf.ufsm.br>
+iPhone
+	https://github.com/brunodea/MedAlert
+	Bruno Romero de Azevedo <brunodea@inf.ufsm.br>
+J2ME
+	Ainda sem repositório definido
+	Thiago Lopes Trugilo Silveira <thiago@inf.ufsm.br>
