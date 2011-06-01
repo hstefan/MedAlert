@@ -2,4 +2,9 @@
 <resources>
     <string name="hello">Hello World, MedAlertActivity!</string>
     <string name="app_name">Med Alert</string>
+    <string name="login_edit_text">login_screen_edit_text</string>
+    <string name="loginTextViewText">Login</string>
+    <string name="passwordTextViewText">Senha</string>
+    <string name="loginButtonText">Login!</string>
+    <string name="clearButtonText">Limpar</string>
 </resources>

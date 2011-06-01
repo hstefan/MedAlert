@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<TextView  
     android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical">
+    
+    <TextView
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/loginTextViewText"
     />
+    <EditText
+    	android:id="@+id/login_text"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:singleLine="true"
+    />
+    
+    <TextView
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content" 
+    	android:text="@string/passwordTextViewText"
+    />
+    <EditText
+    	android:id="@+id/password_text"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:singleLine="true"
+    	android:password="true"
+    />
+    
+    <LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:gravity="center_horizontal">
+	    <Button
+	    	android:id="@+id/login_button"
+	    	android:text="@string/loginButtonText"
+	    	android:layout_width="150px"
+	    	android:layout_height="wrap_content"
+	   	/>
+	   	<Button
+	    	android:id="@+id/clear_button"
+	    	android:text="@string/clearButtonText"
+	    	android:layout_width="150px"
+	    	android:layout_height="wrap_content"
+	   	/>
+   	</LinearLayout>
+    
 </LinearLayout>
