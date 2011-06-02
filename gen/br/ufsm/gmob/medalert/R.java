@@ -18,6 +18,7 @@ public final class R {
         public static final int login_button=0x7f050002;
         public static final int login_text=0x7f050000;
         public static final int password_text=0x7f050001;
+        public static final int remember_checkbox=0x7f050004;
     }
     public static final class layout {
         public static final int main=0x7f030000;
@@ -30,5 +31,6 @@ public final class R {
         public static final int loginTextViewText=0x7f040003;
         public static final int login_edit_text=0x7f040002;
         public static final int passwordTextViewText=0x7f040004;
+        public static final int remember_checkbox_text=0x7f040007;
     }
 }
