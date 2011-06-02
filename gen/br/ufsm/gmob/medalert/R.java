@@ -24,13 +24,12 @@ public final class R {
         public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int clearButtonText=0x7f040006;
-        public static final int hello=0x7f040000;
-        public static final int loginButtonText=0x7f040005;
-        public static final int loginTextViewText=0x7f040003;
-        public static final int login_edit_text=0x7f040002;
-        public static final int passwordTextViewText=0x7f040004;
-        public static final int remember_checkbox_text=0x7f040007;
+        public static final int app_name=0x7f040000;
+        public static final int clearButtonText=0x7f040005;
+        public static final int loginButtonText=0x7f040004;
+        public static final int loginTextViewText=0x7f040002;
+        public static final int login_edit_text=0x7f040001;
+        public static final int passwordTextViewText=0x7f040003;
+        public static final int remember_checkbox_text=0x7f040006;
     }
 }

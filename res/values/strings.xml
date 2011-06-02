@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, MedAlertActivity!</string>
     <string name="app_name">Med Alert</string>
     <string name="login_edit_text">login_screen_edit_text</string>
     <string name="loginTextViewText">Login</string>
-    <string name="passwordTextViewText">Senha</string>
-    <string name="loginButtonText">Login!</string>
-    <string name="clearButtonText">Limpar</string>
-    <string name="remember_checkbox_text">Lembrar-me</string>
+    <string name="passwordTextViewText">Password</string>
+    <string name="loginButtonText">Login</string>
+    <string name="clearButtonText">Clear</string>
+    <string name="remember_checkbox_text">Remember me</string>
 </resources>
