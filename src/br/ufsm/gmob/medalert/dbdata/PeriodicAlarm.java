@@ -1,5 +1,8 @@
 package br.ufsm.gmob.medalert.dbdata;
 
-public class PeriodicAlarm {
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "PeriodicAlarm")
+public class PeriodicAlarm {
+	
 }

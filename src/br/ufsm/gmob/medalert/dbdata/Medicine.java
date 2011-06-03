@@ -1,7 +1,9 @@
 package br.ufsm.gmob.medalert.dbdata;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "Medicine")
 public final class Medicine {
 	@DatabaseField(generatedId = true)
 	private int id;

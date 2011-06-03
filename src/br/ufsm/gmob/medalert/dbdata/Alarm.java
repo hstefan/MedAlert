@@ -3,7 +3,9 @@ package br.ufsm.gmob.medalert.dbdata;
 import java.util.Date;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "Alarm")
 public final class Alarm {
 	@DatabaseField(generatedId = true)
 	private int id;
@@ -19,11 +21,25 @@ public final class Alarm {
 	private Date inits_on;
 	@DatabaseField
 	private int type;
-	@DatabaseField(foreign = true)
-	private AlarmNote id_alarmNote;
+	@DatabaseField
+	private byte days;
+	@DatabaseField(foreign = true, columnName = "id_alarmNote")
+	private AlarmNote note;
 	
+	/**
+	 * Macros to work with the days field.
+	 * Example: if you want you want to set an Alarm that rings on tuesday, friday and sunday,
+	 * 		days = TUESDAY | FRIDAY | SUNDAY
+	 */
+	public static final byte MONDAY = 1;
+	public static final byte TUESDAY = 2;
+	public static final byte WEDNESDAY = 4;
+	public static final byte THURSDAY = 8;
+	public static final byte FRIDAY = 16;
+	public static final byte SATURDAY = 32;
+	public static final byte SUNDAY = 64;
 	public Alarm(int id, boolean is_active, User id_user, Date created_on,
-			Medicine id_medicine, Date inits_on, int type,
+			Medicine id_medicine, Date inits_on, int type, byte days,
 			AlarmNote id_alarmNote) {
 		super();
 		this.id = id;
@@ -33,9 +49,9 @@ public final class Alarm {
 		this.id_medicine = id_medicine;
 		this.inits_on = inits_on;
 		this.type = type;
-		this.id_alarmNote = id_alarmNote;
+		this.days = days;
+		this.note = id_alarmNote;
 	}
-	
 	public int getId() {
 		return id;
 	}
@@ -78,11 +94,16 @@ public final class Alarm {
 	public void setType(int type) {
 		this.type = type;
 	}
-	public AlarmNote getId_alarmNote() {
-		return id_alarmNote;
+	public byte getDays() {
+		return days;
 	}
-	public void setId_alarmNote(AlarmNote id_alarmNote) {
-		this.id_alarmNote = id_alarmNote;
+	public void setDays(byte days) {
+		this.days = days;
 	}
-	
+	public AlarmNote getNote() {
+		return note;
+	}
+	public void setNote(AlarmNote note) {
+		this.note = note;
+	}
 }
