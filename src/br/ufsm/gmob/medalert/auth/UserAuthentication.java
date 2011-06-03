@@ -14,8 +14,9 @@ import javax.security.auth.login.LoginException;
  * @author hstefan
  *
  */
+@SuppressWarnings("serial")
 public class UserAuthentication extends AuthProvider {
-	
+
 	public UserAuthentication() {
 		super("foo", 1.0, "lol");
 		// TODO Auto-generated constructor stub
