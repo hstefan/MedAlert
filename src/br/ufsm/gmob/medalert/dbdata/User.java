@@ -4,7 +4,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "User")
-
 public final class User {
 	@DatabaseField(generatedId = true)
 	private int id;
@@ -12,7 +11,7 @@ public final class User {
 	@DatabaseField(canBeNull = false)
 	private String name;
 	
-	@DatabaseField(canBeNull = false)
+	@DatabaseField(canBeNull = false, index = true)
 	private String login;
 	
 	@DatabaseField(canBeNull = false)
