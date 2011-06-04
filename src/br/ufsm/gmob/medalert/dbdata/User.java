@@ -17,9 +17,8 @@ public final class User {
 	@DatabaseField(canBeNull = false)
 	private String password;
 	
-	public User(int id, String name, String login, String password) {
+	public User(String name, String login, String password) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.login = login;
 		this.password = password;
@@ -27,10 +26,6 @@ public final class User {
 
 	public long getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {

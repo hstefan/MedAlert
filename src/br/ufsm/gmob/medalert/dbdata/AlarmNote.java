@@ -10,16 +10,12 @@ public final class AlarmNote {
 	@DatabaseField
 	private String note;
 	
-	public AlarmNote(int id, String note) {
+	public AlarmNote(String note) {
 		super();
-		this.id = id;
 		this.note = note;
 	}
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getNote() {
 		return note;

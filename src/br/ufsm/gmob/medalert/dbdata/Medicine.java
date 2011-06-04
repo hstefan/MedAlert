@@ -10,18 +10,13 @@ public final class Medicine {
 	@DatabaseField(canBeNull = false, unique = true)
 	private String name;
 	
-	public Medicine(int id, String name) {
+	public Medicine(String name) {
 		super();
-		this.id = id;
 		this.name = name;
 	}
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {
