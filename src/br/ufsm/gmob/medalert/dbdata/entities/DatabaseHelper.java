@@ -17,7 +17,7 @@ import com.j256.ormlite.table.TableUtils;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final String DB_NAME = "medalert.db";
-	private static final int DB_VERSION = 1;
+	private static final int DB_VERSION = 2;
 	private Dao<Alarm, Integer> alarmDao;
 	private Dao<AlarmNote, Integer> alarmNoteDao;
 	private Dao<Medicine, Integer> medicineDao;
@@ -39,14 +39,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, AlarmNote.class);
 			TableUtils.createTable(connectionSource, Alarm.class);
 			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
-			TableUtils.createTable(connectionSource, StaticAlarm.class);
-			
+			TableUtils.createTable(connectionSource, StaticAlarm.class);	
 			//
-			
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Unable to create database.");
 			e.printStackTrace();
-			//throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -54,12 +52,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource connectionSource, int arg2,
 			int arg3) {
 		try {
-			TableUtils.createTable(connectionSource, User.class);
-			TableUtils.createTable(connectionSource, Medicine.class);
-			TableUtils.createTable(connectionSource, AlarmNote.class);
-			TableUtils.createTable(connectionSource, Alarm.class);
-			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
-			TableUtils.createTable(connectionSource, StaticAlarm.class);
+			TableUtils.dropTable(connectionSource, User.class, true);
+			TableUtils.dropTable(connectionSource, Medicine.class, true);
+			TableUtils.dropTable(connectionSource, AlarmNote.class, true);
+			TableUtils.dropTable(connectionSource, Alarm.class, true);
+			TableUtils.dropTable(connectionSource, PeriodicAlarm.class, true);
+			TableUtils.dropTable(connectionSource, StaticAlarm.class, true);
+			onCreate(arg0, connectionSource);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
