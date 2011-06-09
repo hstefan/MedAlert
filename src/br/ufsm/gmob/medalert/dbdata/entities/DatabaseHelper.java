@@ -24,9 +24,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private Dao<StaticAlarm, Integer> staticAlarmDao;
 	private Dao<User, Integer> userDao;
 
-	public DatabaseHelper(Context context, String databaseName,
-			CursorFactory factory, int databaseVersion) {
-		super(context, databaseName, factory, databaseVersion);
+	public DatabaseHelper(Context context) {
+		super(context, DB_NAME, null, DB_VERSION);
 	}
 
 	@Override

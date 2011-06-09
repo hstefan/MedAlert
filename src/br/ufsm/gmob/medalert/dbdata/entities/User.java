@@ -23,6 +23,9 @@ public final class User {
 		this.login = login;
 		this.password = password;
 	}
+	
+	public User() {
+	}
 
 	public long getId() {
 		return id;

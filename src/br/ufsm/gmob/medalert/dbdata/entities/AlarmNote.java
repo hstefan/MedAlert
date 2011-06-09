@@ -14,6 +14,11 @@ public final class AlarmNote {
 		super();
 		this.note = note;
 	}
+	
+	public AlarmNote() {
+
+	}
+	
 	public int getId() {
 		return id;
 	}

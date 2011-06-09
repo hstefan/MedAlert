@@ -53,6 +53,10 @@ public final class Alarm {
 		this.note = id_alarmNote;
 	}
 	
+	public Alarm() {
+		
+	}
+	
 	public int getId() {
 		return id;
 	}

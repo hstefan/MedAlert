@@ -14,6 +14,10 @@ public final class Medicine {
 		super();
 		this.name = name;
 	}
+	
+	public Medicine() {
+		
+	}
 
 	public int getId() {
 		return id;

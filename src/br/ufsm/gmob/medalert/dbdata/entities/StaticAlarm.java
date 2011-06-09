@@ -15,6 +15,10 @@ public class StaticAlarm {
 	@DatabaseField(foreign = true)
 	private Alarm id_alarm;
 	
+	public StaticAlarm() {
+		
+	}
+	
 	public StaticAlarm(int id, Date time, Alarm id_alarm) {
 		super();
 		this.id = id;

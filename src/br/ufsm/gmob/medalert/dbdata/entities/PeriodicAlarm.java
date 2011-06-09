@@ -19,7 +19,11 @@ public class PeriodicAlarm {
 		this.alert_interval = alert_interval;
 		this.alarm = alarm;
 	}
-
+	
+	public PeriodicAlarm() {
+		
+	}
+	
 	public Date getAlert_interval() {
 		return alert_interval;
 	}
