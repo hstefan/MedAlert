@@ -1,5 +1,6 @@
 package br.ufsm.gmob.medalert.dbdata.entities;
 
+import java.io.File;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.TreeMap;
@@ -15,7 +16,7 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-	private static final String DB_NAME = "medaler.db";
+	private static final String DB_NAME = "medalert.db";
 	private static final int DB_VERSION = 1;
 	private Dao<Alarm, Integer> alarmDao;
 	private Dao<AlarmNote, Integer> alarmNoteDao;
@@ -33,12 +34,13 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		Log.i(DatabaseHelper.class.getName(), "onCreate");
 		try {
 			//creates tables for each entity
-//			TableUtils.createTable(connectionSource, Alarm.class);
-//			TableUtils.createTable(connectionSource, AlarmNote.class);
-//			TableUtils.createTable(connectionSource, Medicine.class);
-//			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
-//			TableUtils.createTable(connectionSource, StaticAlarm.class);
 			TableUtils.createTable(connectionSource, User.class);
+			TableUtils.createTable(connectionSource, Medicine.class);
+			TableUtils.createTable(connectionSource, AlarmNote.class);
+			TableUtils.createTable(connectionSource, Alarm.class);
+			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
+			TableUtils.createTable(connectionSource, StaticAlarm.class);
+			
 			//
 			
 		} catch (SQLException e) {
@@ -49,9 +51,19 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	}
 
 	@Override
-	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2,
+	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource connectionSource, int arg2,
 			int arg3) {
-		// TODO drop tables and recreate them
+		try {
+			TableUtils.createTable(connectionSource, User.class);
+			TableUtils.createTable(connectionSource, Medicine.class);
+			TableUtils.createTable(connectionSource, AlarmNote.class);
+			TableUtils.createTable(connectionSource, Alarm.class);
+			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
+			TableUtils.createTable(connectionSource, StaticAlarm.class);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	

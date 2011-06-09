@@ -1,7 +1,11 @@
 package br.ufsm.gmob.medalert.dbdata.entities;
 
+import java.io.File;
 import java.util.Date;
 
+import br.ufsm.gmob.medalert.auth.UserAuthentication;
+
+import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -11,13 +15,15 @@ public class PeriodicAlarm {
 	private int id;
 	@DatabaseField
 	private Date alert_interval;
-	@DatabaseField(columnName = "id_alarm")
+	@DatabaseField(columnName = "id_alarm", foreign = true)
+	Integer id_alarm;
+	
 	private Alarm alarm;
 	
-	public PeriodicAlarm(Date alert_interval, Alarm alarm) {
+	public PeriodicAlarm(Date alert_interval, Integer alarm) {
 		super();
 		this.alert_interval = alert_interval;
-		this.alarm = alarm;
+		id_alarm = alarm;
 	}
 	
 	public PeriodicAlarm() {
