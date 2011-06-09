@@ -51,7 +51,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	@Override
 	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2,
 			int arg3) {
-		// TODO Auto-generated method stub
+		// TODO drop tables and recreate them
 		
 	}
 	
