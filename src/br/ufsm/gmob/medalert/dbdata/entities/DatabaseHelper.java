@@ -33,17 +33,18 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		Log.i(DatabaseHelper.class.getName(), "onCreate");
 		try {
 			//creates tables for each entity
-			TableUtils.createTable(connectionSource, Alarm.class);
-			TableUtils.createTable(connectionSource, AlarmNote.class);
-			TableUtils.createTable(connectionSource, Medicine.class);
-			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
-			TableUtils.createTable(connectionSource, StaticAlarm.class);
+//			TableUtils.createTable(connectionSource, Alarm.class);
+//			TableUtils.createTable(connectionSource, AlarmNote.class);
+//			TableUtils.createTable(connectionSource, Medicine.class);
+//			TableUtils.createTable(connectionSource, PeriodicAlarm.class);
+//			TableUtils.createTable(connectionSource, StaticAlarm.class);
 			TableUtils.createTable(connectionSource, User.class);
 			//
 			
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Unable to create database.");
-			throw new RuntimeException(e);
+			e.printStackTrace();
+			//throw new RuntimeException(e);
 		}
 	}
 
