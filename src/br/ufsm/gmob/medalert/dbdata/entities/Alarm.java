@@ -54,46 +54,45 @@ public final class Alarm {
 	}
 	
 	public Alarm() {
-		
 	}
 	
 	public int getId() {
 		return id;
 	}
 	
-	public boolean isIs_active() {
+	public boolean isActive() {
 		return is_active;
 	}
 	
-	public void setIs_active(boolean is_active) {
+	public void setActive(boolean is_active) {
 		this.is_active = is_active;
 	}
 	
-	public User getId_user() {
+	public User getUser() {
 		return user;
 	}
 	
-	public void setId_user(User id_user) {
-		this.user = id_user;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
-	public Date getCreated_on() {
+	public Date getCreationDate() {
 		return created_on;
 	}
 	
-	public void setCreated_on(Date created_on) {
+	public void setCreationDate(Date created_on) {
 		this.created_on = created_on;
 	}
 	
-	public Medicine getId_medicine() {
+	public Medicine getMedicine() {
 		return medicine;
 	}
 	
-	public void setId_medicine(Medicine id_medicine) {
+	public void setMedicine(Medicine id_medicine) {
 		this.medicine = id_medicine;
 	}
 	
-	public Date getInits_on() {
+	public Date getInitialDate() {
 		return inits_on;
 	}
 	
