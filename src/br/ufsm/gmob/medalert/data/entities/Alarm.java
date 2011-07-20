@@ -1,4 +1,4 @@
-package br.ufsm.gmob.medalert.dbdata.entities;
+package br.ufsm.gmob.medalert.data.entities;
 
 import java.util.Date;
 

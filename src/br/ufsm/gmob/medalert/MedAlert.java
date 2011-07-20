@@ -9,17 +9,17 @@ import java.util.List;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
 
-import br.ufsm.gmob.medalert.dbdata.entities.AlarmNote;
-import br.ufsm.gmob.medalert.dbdata.entities.DatabaseHelper;
-import br.ufsm.gmob.medalert.dbdata.entities.User;
+import br.ufsm.gmob.medalert.data.entities.AlarmNote;
+import br.ufsm.gmob.medalert.data.entities.DatabaseHelper;
+import br.ufsm.gmob.medalert.data.entities.User;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 
-public class MedAlertActivity extends OrmLiteBaseActivity<DatabaseHelper> {
+public class MedAlert extends OrmLiteBaseActivity<DatabaseHelper> {
     /** Called when the activity is first created. */
-	public MedAlertActivity() {
+	public MedAlert() {
 		File f = new File("medalert.db");
 		if(f.exists()) {
 			f.delete();

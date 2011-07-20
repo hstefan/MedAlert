@@ -1,4 +1,4 @@
-package br.ufsm.gmob.medalert.dbdata.entities;
+package br.ufsm.gmob.medalert.data.entities;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
