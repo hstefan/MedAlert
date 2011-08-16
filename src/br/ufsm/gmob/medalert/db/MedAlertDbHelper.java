@@ -1,37 +1,41 @@
-package br.ufsm.gmob.medalert.db.entities;
+package br.ufsm.gmob.medalert.db;
 
-import java.io.File;
 import java.sql.SQLException;
-import java.util.Map;
-import java.util.TreeMap;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.util.Log;
+import br.ufsm.gmob.medalert.db.entities.Alarm;
+import br.ufsm.gmob.medalert.db.entities.AlarmNote;
+import br.ufsm.gmob.medalert.db.entities.Medicine;
+import br.ufsm.gmob.medalert.db.entities.PeriodicAlarm;
+import br.ufsm.gmob.medalert.db.entities.StaticAlarm;
+import br.ufsm.gmob.medalert.db.entities.User;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
-public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-	private static final String DB_NAME = "medalert.db";
-	private static final int DB_VERSION = 2;
+public class MedAlertDbHelper extends OrmLiteSqliteOpenHelper {
+
+	public static String DATABASE_NAME = "medalert.db";
+	public static int DATABASE_VERSION = 1;
+	
 	private Dao<Alarm, Integer> alarmDao;
 	private Dao<AlarmNote, Integer> alarmNoteDao;
 	private Dao<Medicine, Integer> medicineDao;
 	private Dao<PeriodicAlarm, Integer> periodicAlarmDao;
 	private Dao<StaticAlarm, Integer> staticAlarmDao;
 	private Dao<User, Integer> userDao;
-
-	public DatabaseHelper(Context context) {
-		super(context, DB_NAME, null, DB_VERSION);
+	
+	public MedAlertDbHelper(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
 	@Override
-	public void onCreate(SQLiteDatabase arg0, ConnectionSource connectionSource) {
-		Log.i(DatabaseHelper.class.getName(), "onCreate");
+	public void onCreate(SQLiteDatabase db, ConnectionSource connectionSource) {
+		Log.i(MedAlertDbHelper.class.getName(), "onCreate event");
 		try {
 			//creates tables for each entity
 			TableUtils.createTable(connectionSource, User.class);
@@ -42,7 +46,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, StaticAlarm.class);	
 			//
 		} catch (SQLException e) {
-			Log.e(DatabaseHelper.class.getName(), "Unable to create database.");
+			Log.e(MedAlertDbHelper.class.getName(), "Unable to create database.");
 			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
@@ -60,10 +64,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, StaticAlarm.class, true);
 			onCreate(arg0, connectionSource);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			Log.e(MedAlertDbHelper.class.getName(), "Unable to create database.");
 			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
-		
 	}
 	
 	public Dao<Alarm, Integer> getAlarmDao() throws SQLException{
@@ -107,4 +111,5 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		}
 		return userDao;
 	}
+
 }

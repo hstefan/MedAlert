@@ -2,22 +2,19 @@ package br.ufsm.gmob.medalert;
 
 import java.io.File;
 import java.sql.SQLException;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
+
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.util.Log;
+import br.ufsm.gmob.medalert.db.MedAlertDbHelper;
+import br.ufsm.gmob.medalert.db.entities.AlarmNote;
+import br.ufsm.gmob.medalert.db.entities.User;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
 
-import br.ufsm.gmob.medalert.db.entities.AlarmNote;
-import br.ufsm.gmob.medalert.db.entities.DatabaseHelper;
-import br.ufsm.gmob.medalert.db.entities.User;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.os.Bundle;
-import android.util.Log;
-
-public class MedAlert extends OrmLiteBaseActivity<DatabaseHelper> {
+public class MedAlert extends OrmLiteBaseActivity<MedAlertDbHelper> {
     /** Called when the activity is first created. */
 	public MedAlert() {
 		File f = new File("medalert.db");
@@ -32,7 +29,7 @@ public class MedAlert extends OrmLiteBaseActivity<DatabaseHelper> {
     	
     	User u = new User("Hugo Puhlmann", "23423423", "123");
     	User v = new User("Hugo Puhlmann", "foofofofo", "123");
-    	DatabaseHelper helper = getHelper();
+    	MedAlertDbHelper helper = getHelper();
 
     	try {
 			Dao<User, Integer> userDao = helper.getUserDao();
