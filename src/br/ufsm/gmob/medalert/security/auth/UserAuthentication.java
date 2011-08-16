@@ -1,7 +1,7 @@
 /**
  * 
  */
-package br.ufsm.gmob.medalert.auth;
+package br.ufsm.gmob.medalert.security.auth;
 
 import java.security.AuthProvider;
 
