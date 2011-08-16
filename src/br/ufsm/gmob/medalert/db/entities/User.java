@@ -17,14 +17,23 @@ public final class User {
 	@DatabaseField(canBeNull = false)
 	private String password;
 	
-	public User(String name, String login, String password) {
+	@DatabaseField(canBeNull = false)
+	private String salt;
+	
+	@DatabaseField(canBeNull = false)
+	private int hash_rounds;
+	
+	public User(String name, String login, String password, String salt, int hash_rounds) {
 		super();
 		this.name = name;
 		this.login = login;
 		this.password = password;
+		this.salt = salt;
+		this.hash_rounds = hash_rounds;
 	}
 	
 	public User() {
+		
 	}
 
 	public long getId() {
@@ -53,6 +62,22 @@ public final class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
+	public int getHashRounds() {
+		return hash_rounds;
+	}
+
+	public void setHashRounds(int hash_rounds) {
+		this.hash_rounds = hash_rounds;
 	}
 	
 	
