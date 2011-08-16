@@ -9,9 +9,9 @@ import java.util.List;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
 
-import br.ufsm.gmob.medalert.data.entities.AlarmNote;
-import br.ufsm.gmob.medalert.data.entities.DatabaseHelper;
-import br.ufsm.gmob.medalert.data.entities.User;
+import br.ufsm.gmob.medalert.db.entities.AlarmNote;
+import br.ufsm.gmob.medalert.db.entities.DatabaseHelper;
+import br.ufsm.gmob.medalert.db.entities.User;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;

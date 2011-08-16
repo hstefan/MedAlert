@@ -1,4 +1,4 @@
-package br.ufsm.gmob.medalert.data.entities;
+package br.ufsm.gmob.medalert.db.entities;
 
 import java.io.File;
 import java.sql.SQLException;
