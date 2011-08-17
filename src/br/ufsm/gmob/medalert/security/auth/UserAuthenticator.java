@@ -3,11 +3,28 @@
  */
 package br.ufsm.gmob.medalert.security.auth;
 
+import java.util.Arrays;
+
 
 /**
  * @author hstefan
  *
  */
-public interface UserAuthenticator {
-	public boolean authenticate(String username, String password);
+public class UserAuthenticator {
+	private ValidationQuerier querier;
+	private PasswordDigester digester;
+	
+	public boolean authenticate(String username, String password){
+		DigestedPassInfo userinfo = querier.queryForUser(username);
+		
+		if(userinfo != null) {
+			DigestedPassInfo digest_pass = digester.digest(password, userinfo.getSalt(), userinfo.getRounds());
+			
+			if(Arrays.equals(digest_pass.getHash(), userinfo.getHash())) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }
