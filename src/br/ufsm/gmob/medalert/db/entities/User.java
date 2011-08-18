@@ -78,7 +78,5 @@ public final class User {
 
 	public void setHashRounds(int hash_rounds) {
 		this.hash_rounds = hash_rounds;
-	}
-	
-	
+	}	
 }
