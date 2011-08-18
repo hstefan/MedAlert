@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:padding="15sp">
+    <LinearLayout android:id="@+id/linearLayout1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" android:hint="Login" android:id="@+id/login_edittext"></EditText>
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:hint="Password" android:id="@+id/pass_edittext"></EditText>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/linearLayout3" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <CheckBox android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center" android:text="@string/remember_me_cb" android:id="@+id/remember_login_cb_id"></CheckBox>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0.5" android:text="@string/login_button_text" android:id="@+id/login_button_id"></Button>
+    </LinearLayout>
+    
+</LinearLayout>
