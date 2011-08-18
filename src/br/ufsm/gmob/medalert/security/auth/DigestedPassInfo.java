@@ -4,7 +4,7 @@ public class DigestedPassInfo {
 	private byte[] hash;
 	private byte[] salt;
 	private int rounds;
-	
+		
 	public DigestedPassInfo(byte[] hash, byte[] salt, int rounds) {
 		super();
 		this.hash = hash;

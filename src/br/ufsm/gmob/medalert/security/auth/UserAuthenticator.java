@@ -13,7 +13,14 @@ import java.util.Arrays;
 public class UserAuthenticator {
 	private ValidationQuerier querier;
 	private PasswordDigester digester;
-	
+		
+	public UserAuthenticator(ValidationQuerier querier,
+			PasswordDigester digester) {
+		super();
+		this.querier = querier;
+		this.digester = digester;
+	}
+
 	public boolean authenticate(String username, String password){
 		DigestedPassInfo userinfo = querier.queryForUser(username);
 		
