@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class BasicPasswordDigester implements PasswordDigester {
 	
-	private static int DEFAULT_ROUND_NUM = 1000;
+	private static int DEFAULT_ROUND_NUM = 1;
 	private static int DEFAULT_SALT_BYTES_NUM = 16;
 	
 	public DigestedPassInfo digest(String password, byte[] salt, int rounds) {

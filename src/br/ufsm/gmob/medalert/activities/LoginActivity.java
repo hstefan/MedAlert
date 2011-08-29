@@ -30,7 +30,19 @@ public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 		Button login_button = (Button) findViewById(R.id.login_button_id);
 		setupButton(login_button);
 		
+		ereaseTestOnlyData();
 		insertTestOnlyData();
+	}
+
+	private void ereaseTestOnlyData() {
+		try {
+			Dao<User, Integer> d = getHelper().getUserDao();
+			int f = d.delete(d.deleteBuilder().prepare());
+			System.out.println("Rows updated: " + f);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private void insertTestOnlyData() {
