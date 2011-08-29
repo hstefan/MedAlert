@@ -18,6 +18,7 @@ import br.ufsm.gmob.medalert.security.auth.UserAuthenticator;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.PreparedDelete;
 
 public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 
@@ -59,9 +60,9 @@ public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 				try {
 					authenticator = new UserAuthenticator(new SqliteValidationQuerier(getHelper().getUserDao()), new BasicPasswordDigester());
 					if(authenticator.authenticate(login, pass)) {
-						Toast.makeText(getApplicationContext(),"Valid credentials.", Toast.LENGTH_SHORT);
+						Toast.makeText(getApplicationContext(),"Valid credentials.", Toast.LENGTH_SHORT).show();
 					} else {
-						Toast.makeText(getApplicationContext(), "Invalid username/password.", Toast.LENGTH_SHORT);
+						Toast.makeText(getApplicationContext(), "Invalid username/password.", Toast.LENGTH_SHORT).show();
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block

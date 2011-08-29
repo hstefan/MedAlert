@@ -12,7 +12,7 @@ public class StaticAlarm {
 	@DatabaseField
 	private Date time;
 
-	@DatabaseField(foreign = true)
+	@DatabaseField(columnName = "id_alarm" ,foreign = true)
 	private Alarm id_alarm;
 	
 	public StaticAlarm() {

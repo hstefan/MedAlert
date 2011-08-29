@@ -12,11 +12,11 @@ public class PeriodicAlarm {
 	@DatabaseField
 	private Date alert_interval;
 	@DatabaseField(columnName = "id_alarm", foreign = true)
-	Integer id_alarm;
+	Alarm id_alarm;
 	
 	private Alarm alarm;
 	
-	public PeriodicAlarm(Date alert_interval, Integer alarm) {
+	public PeriodicAlarm(Date alert_interval, Alarm alarm) {
 		super();
 		this.alert_interval = alert_interval;
 		id_alarm = alarm;

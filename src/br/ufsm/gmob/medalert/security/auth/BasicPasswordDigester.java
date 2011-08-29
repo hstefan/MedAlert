@@ -19,7 +19,6 @@ public class BasicPasswordDigester implements PasswordDigester {
 			String normalized_pass = Normalizer.normalize(password, Normalizer.Form.NFC);
 			String salted = salt + normalized_pass;
 			
-			digester.update(salted.getBytes());
 			for(int nrounds = 0; nrounds < rounds; nrounds++) {
 				digester.update(salted.getBytes()); 
 			}
