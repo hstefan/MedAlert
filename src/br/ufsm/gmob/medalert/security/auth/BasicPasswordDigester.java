@@ -9,7 +9,7 @@ import android.util.Log;
 
 public class BasicPasswordDigester implements PasswordDigester {
 	
-	private static int DEFAULT_ROUND_NUM = 1;
+	private static int DEFAULT_ROUND_NUM = 1000;
 	private static int DEFAULT_SALT_BYTES_NUM = 16;
 	
 	public DigestedPassInfo digest(String password, byte[] salt, int rounds) {
@@ -17,7 +17,7 @@ public class BasicPasswordDigester implements PasswordDigester {
 		try {
 			digester = MessageDigest.getInstance("SHA-512");
 			String normalized_pass = Normalizer.normalize(password, Normalizer.Form.NFC);
-			String salted = salt + normalized_pass;
+			String salted = new String(salt) + normalized_pass;
 			
 			for(int nrounds = 0; nrounds < rounds; nrounds++) {
 				digester.update(salted.getBytes()); 

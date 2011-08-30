@@ -1,6 +1,7 @@
 package br.ufsm.gmob.medalert.activities;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import android.os.Bundle;
 import android.view.View;
@@ -37,8 +38,7 @@ public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 	private void ereaseTestOnlyData() {
 		try {
 			Dao<User, Integer> d = getHelper().getUserDao();
-			int f = d.delete(d.deleteBuilder().prepare());
-			System.out.println("Rows updated: " + f);
+			d.delete(d.deleteBuilder().prepare());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,7 +49,7 @@ public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 		BasicPasswordDigester bpd = new BasicPasswordDigester();
 		DigestedPassInfo dpi = bpd.digest("1234");
 		
-		User u = new User("Test", "testador", dpi.getHash(), dpi.getSalt(), dpi.getRounds());
+		User u = new User("Test", "test", dpi.getHash(), dpi.getSalt(), dpi.getRounds());
 		try {
 			Dao<User, Integer> d = getHelper().getUserDao();
 			d.create(u);

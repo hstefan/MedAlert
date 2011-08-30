@@ -5,8 +5,6 @@ package br.ufsm.gmob.medalert.security.auth;
 
 import java.util.Arrays;
 
-import android.util.Log;
-
 
 /**
  * @author hstefan
@@ -31,10 +29,7 @@ public class UserAuthenticator {
 			
 			if(Arrays.equals(digest_pass.getHash(), userinfo.getHash())) {
 				return true;
-			} else {
-				System.err.println(new String(digest_pass.getHash()));
-				System.err.println(new String(userinfo.getHash()));
-			}
+			} 
 		}
 		
 		return false;
