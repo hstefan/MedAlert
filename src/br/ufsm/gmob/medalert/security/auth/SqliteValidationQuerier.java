@@ -1,7 +1,6 @@
 package br.ufsm.gmob.medalert.security.auth;
 
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.List;
 
 import android.util.Log;

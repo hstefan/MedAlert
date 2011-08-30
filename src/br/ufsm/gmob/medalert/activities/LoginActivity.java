@@ -1,7 +1,6 @@
 package br.ufsm.gmob.medalert.activities;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,6 @@ import br.ufsm.gmob.medalert.security.auth.UserAuthenticator;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.stmt.PreparedDelete;
 
 public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 
