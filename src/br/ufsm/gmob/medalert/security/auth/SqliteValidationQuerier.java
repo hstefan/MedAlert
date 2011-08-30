@@ -10,9 +10,9 @@ import com.j256.ormlite.dao.Dao;
 
 public class SqliteValidationQuerier implements ValidationQuerier{
 
-	private Dao<User, Integer> user_dao;
+	private Dao<User, ?> user_dao;
 	
-	public SqliteValidationQuerier(Dao<User, Integer> user_dao) {
+	public SqliteValidationQuerier(Dao<User, ?> user_dao) {
 		super();
 		this.user_dao = user_dao;
 	}
