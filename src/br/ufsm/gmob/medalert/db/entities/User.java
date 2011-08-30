@@ -1,8 +1,9 @@
 package br.ufsm.gmob.medalert.db.entities;
 
+import android.util.Base64;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import android.util.Base64;
 
 @DatabaseTable(tableName = "User")
 public final class User {
@@ -57,20 +58,20 @@ public final class User {
 		this.login = login;
 	}
 
-	public String getPassword() {
-		return password;
+	public byte[] getPassword() {
+		return Base64.decode(password.getBytes(), Base64.DEFAULT);
 	}
 
 	public void setPassword(byte[] password_hash) {
 		this.password = Base64.encodeToString(password_hash, Base64.DEFAULT);
 	}
 
-	public String getSalt() {
-		return salt;
+	public byte[] getSalt() {
+		return Base64.decode(salt.getBytes(), Base64.DEFAULT);
 	}
 
-	public void setSalt(String salt) {
-		this.salt = salt;
+	public void setSalt(byte[] salt) {
+		this.salt = Base64.encodeToString(salt, Base64.DEFAULT);
 	}
 
 	public int getHashRounds() {

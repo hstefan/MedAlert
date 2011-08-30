@@ -49,7 +49,7 @@ public class LoginActivity extends OrmLiteBaseActivity<MedAlertDbHelper> {
 		BasicPasswordDigester bpd = new BasicPasswordDigester();
 		DigestedPassInfo dpi = bpd.digest("1234");
 		
-		User u = new User("Test", "testador", new String(dpi.getHash()), new String(dpi.getSalt()), dpi.getRounds());
+		User u = new User("Test", "testador", dpi.getHash(), dpi.getSalt(), dpi.getRounds());
 		try {
 			Dao<User, Integer> d = getHelper().getUserDao();
 			d.create(u);

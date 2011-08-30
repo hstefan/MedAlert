@@ -25,8 +25,8 @@ public class SqliteValidationQuerier implements ValidationQuerier{
 			if(sz == 1) {
 				User u = f.get(0); //TODO: exception when more than one user is found with the same login.
 				if(u != null) {
-					return new DigestedPassInfo(u.getPassword().getBytes(), 
-							u.getSalt().getBytes(), u.getHashRounds());
+					return new DigestedPassInfo(u.getPassword(), u.getSalt(), 
+							u.getHashRounds());
 				}
 			} else {
 				Log.d("Auth failure", "Results differ from expectations " + sz);
