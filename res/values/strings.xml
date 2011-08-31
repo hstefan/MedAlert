@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Med Alert</string>
-    <string name="remember_me_cb">Remember me</string>
-    <string name="login_button_text">Login</string>
 </resources>
