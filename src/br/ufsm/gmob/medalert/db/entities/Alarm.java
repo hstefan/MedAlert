@@ -11,8 +11,6 @@ public final class Alarm {
 	private int id;
 	@DatabaseField
 	private boolean is_active;
-	@DatabaseField(foreign = true, columnName = "id_user")
-	private User user;
 	@DatabaseField
 	private Date created_on;
 	@DatabaseField(foreign = true, columnName = "id_medicine")
@@ -39,12 +37,11 @@ public final class Alarm {
 	public static final byte SATURDAY = 32;
 	public static final byte SUNDAY = 64;
 	
-	public Alarm(boolean is_active, User id_user, Date created_on,
+	public Alarm(boolean is_active, Date created_on,
 			Medicine id_medicine, Date inits_on, int type, byte days,
 			AlarmNote id_alarmNote) {
 		super();
 		this.is_active = is_active;
-		this.user = id_user;
 		this.created_on = created_on;
 		this.medicine = id_medicine;
 		this.inits_on = inits_on;
@@ -66,14 +63,6 @@ public final class Alarm {
 	
 	public void setActive(boolean is_active) {
 		this.is_active = is_active;
-	}
-	
-	public User getUser() {
-		return user;
-	}
-	
-	public void setUser(User user) {
-		this.user = user;
 	}
 	
 	public Date getCreationDate() {

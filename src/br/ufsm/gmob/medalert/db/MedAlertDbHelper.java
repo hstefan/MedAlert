@@ -10,7 +10,6 @@ import br.ufsm.gmob.medalert.db.entities.AlarmNote;
 import br.ufsm.gmob.medalert.db.entities.Medicine;
 import br.ufsm.gmob.medalert.db.entities.PeriodicAlarm;
 import br.ufsm.gmob.medalert.db.entities.StaticAlarm;
-import br.ufsm.gmob.medalert.db.entities.User;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -27,7 +26,6 @@ public class MedAlertDbHelper extends OrmLiteSqliteOpenHelper {
 	private Dao<Medicine, Integer> medicineDao;
 	private Dao<PeriodicAlarm, Integer> periodicAlarmDao;
 	private Dao<StaticAlarm, Integer> staticAlarmDao;
-	private Dao<User, Integer> userDao;
 	
 	public MedAlertDbHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,7 +36,6 @@ public class MedAlertDbHelper extends OrmLiteSqliteOpenHelper {
 		Log.i(MedAlertDbHelper.class.getName(), "onCreate event");
 		try {
 			//creates tables for each entity
-			TableUtils.createTable(connectionSource, User.class);
 			TableUtils.createTable(connectionSource, Medicine.class);
 			TableUtils.createTable(connectionSource, AlarmNote.class);
 			TableUtils.createTable(connectionSource, Alarm.class);
@@ -56,7 +53,6 @@ public class MedAlertDbHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource connectionSource, int arg2,
 			int arg3) {
 		try {
-			TableUtils.dropTable(connectionSource, User.class, true);
 			TableUtils.dropTable(connectionSource, Medicine.class, true);
 			TableUtils.dropTable(connectionSource, AlarmNote.class, true);
 			TableUtils.dropTable(connectionSource, Alarm.class, true);
@@ -104,12 +100,4 @@ public class MedAlertDbHelper extends OrmLiteSqliteOpenHelper {
 		}
 		return staticAlarmDao;
 	}
-	
-	public Dao<User, Integer> getUserDao() throws SQLException{
-		if(userDao == null) {
-			userDao = getDao(User.class);
-		}
-		return userDao;
-	}
-
 }
