@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="lib/ormlite-android-4.22.jar"/>
-	<classpathentry kind="lib" path="lib/ormlite-core-4.22.jar"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="/home/hstefan/workspace/MedAlert/lib/ormlite-android-4.33.jar"/>
+	<classpathentry kind="lib" path="/home/hstefan/workspace/MedAlert/lib/ormlite-core-4.32.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
