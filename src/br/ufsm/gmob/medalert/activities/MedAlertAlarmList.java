@@ -1,9 +1,11 @@
 package br.ufsm.gmob.medalert.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import br.ufsm.gmob.medalert.R;
 
 public class MedAlertAlarmList extends Activity {
@@ -13,14 +15,17 @@ public class MedAlertAlarmList extends Activity {
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.main);
 		
-		initTypeSpinner();
+		initCreateButton();
 	}
 
-	private void initTypeSpinner() {
-		Spinner spinner = (Spinner)findViewById(R.id.alarmTypeSP);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
-				R.array.SpinnerAlarmTypes, android.R.layout.simple_spinner_dropdown_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);
+	private void initCreateButton() {
+		Button btn = (Button)findViewById(R.id.addAlarmButton);
+		btn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent i = new Intent(MedAlertAlarmList.this, 
+						CreateAlarmActivity.class);
+				startActivity(i);
+			}
+		});
 	}
 }
