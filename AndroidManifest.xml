@@ -10,5 +10,6 @@
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+        <activity android:name=".activities.CreateAlarmActivity"></activity>
     </application>
 </manifest>
