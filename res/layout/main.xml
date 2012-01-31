@@ -2,5 +2,26 @@
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent" 
     android:layout_height="fill_parent" 
-    android:orientation="vertical">    
+    android:orientation="vertical">
+
+		<LinearLayout
+		    android:id="@+id/ActionBarContainer"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="right" >
+
+		    <Button
+		        android:id="@+id/addAlarmButton"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/addAlarmButtonText" />
+		</LinearLayout>
+
+		<ListView
+		    android:id="@+id/AlarmListView"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+		</ListView>
+    
 </LinearLayout>
