@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Med Alert</string>
+    <string name="addAlarmButtonText">Add</string>
+    <string name="med_name_text">Medicine Name</string>
+    <string-array name="SpinnerAlarmTypes">
+        <item >Recurring</item>
+        <item >Static</item>
+    </string-array>
+    
 </resources>
