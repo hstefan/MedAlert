@@ -23,7 +23,7 @@ public class MedAlertAlarmList extends Activity {
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(MedAlertAlarmList.this, 
-						CreateAlarmActivity.class);
+						CreateStaticAlarmActivity.class);
 				startActivity(i);
 			}
 		});

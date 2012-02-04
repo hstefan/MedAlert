@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import br.ufsm.gmob.medalert.R;
 
-public class CreateAlarmActivity extends Activity {
+public class CreateStaticAlarmActivity extends Activity {
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
