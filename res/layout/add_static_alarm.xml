@@ -5,6 +5,26 @@
     android:orientation="vertical" 
     android:paddingTop="10dip">
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/DiscardStaticAlarmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/DiscardAlarmButtonText" />
+
+        <Button
+            android:id="@+id/CreateStaticAlarmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ConfirmButtonText" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/medNameTF"
         android:layout_width="match_parent"
@@ -12,19 +32,21 @@
         android:hint="@string/MedicineNameHint"
         android:singleLine="true" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <EditText
+        android:id="@+id/StaticAlarmStartingDateTE"
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:orientation="horizontal" >
+        android:layout_height="wrap_content"
+        android:hint="@string/StartingDateHint"
+        android:inputType="date" >
 
-        <TimePicker
-            android:id="@+id/timePicker1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dip" />
+        <requestFocus />
+    </EditText>
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/StaticAlarmTimeTE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/TimeTEHint"
+        android:inputType="time" />
 
 </LinearLayout>

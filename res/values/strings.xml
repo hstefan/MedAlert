@@ -9,5 +9,10 @@
         <string name="DiscardAlarmButtonText">Discard</string>
         <string name="StaticAlarmButtonText">Static</string>
         <string name="RecurringButtonText">Recurring</string>
+        <string name="StartingDateHint">Starting date (mm/dd/yyyy)</string>
+        <string name="TimeTEHint">Time (hh:mm am/pm)</string>
+        <string name="DiscardButtonText">Discard</string>
+        <string name="ConfirmText">Confirm</string>
+        <string name="ConfirmButtonText">Confirm</string>
     
 </resources>
