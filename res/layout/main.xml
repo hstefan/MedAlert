@@ -12,11 +12,19 @@
 		    android:gravity="right" >
 
 		    <Button
-		        android:id="@+id/addAlarmButton"
+		        android:id="@+id/RecurringAlarmButton"
 		        android:layout_width="0dip"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="1"
-		        android:text="@string/addAlarmButtonText" />
+		        android:text="@string/RecurringButtonText" />
+
+		    <Button
+		        android:id="@+id/StaticAlarmButton"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:text="@string/StaticAlarmButtonText" />
+
 		</LinearLayout>
 
 		<ListView

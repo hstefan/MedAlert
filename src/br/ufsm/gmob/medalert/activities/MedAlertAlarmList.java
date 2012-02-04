@@ -15,11 +15,11 @@ public class MedAlertAlarmList extends Activity {
 		super.onCreate(savedInstanceState);	
 		setContentView(R.layout.main);
 		
-		initCreateButton();
+		initStaticAlarmButton();
 	}
 
-	private void initCreateButton() {
-		Button btn = (Button)findViewById(R.id.addAlarmButton);
+	private void initStaticAlarmButton() {
+		Button btn = (Button)findViewById(R.id.StaticAlarmButton);
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent i = new Intent(MedAlertAlarmList.this, 
