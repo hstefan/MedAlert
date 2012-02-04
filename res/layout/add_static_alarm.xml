@@ -9,12 +9,22 @@
         android:id="@+id/medNameTF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/med_name_text"
+        android:hint="@string/MedicineNameHint"
         android:singleLine="true" />
 
-    <Spinner
-        android:id="@+id/alarmTypeSP"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TimePicker
+            android:id="@+id/timePicker1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip" />
+
+    </LinearLayout>
 
 </LinearLayout>
